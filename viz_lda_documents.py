@@ -222,6 +222,7 @@ def update_lda_visualization(data):
     # Modify the values of 'Most Probable Topic' to include the topic's top words
     # so that the values can be used as more concise informative labels in the scatter plot
     df['Most Probable Topic'] = df['Most Probable Topic'].apply(lambda x: f'Topic {x}: {top_words[x]}')
+    df['Next Likely Topic'] = df['Next Likely Topic'].apply(lambda x: f'Topic {x}: {top_words[x]}')
    
     # Create a scatter plot
     fig = px.scatter(df, x='x', y='y', text='Filename',
@@ -229,13 +230,13 @@ def update_lda_visualization(data):
                     #  size='Probability of Topic',
                      hover_data=['Filename',                             
                                  'Most Probable Topic', 
-                                 'Probability of Topic',
                                 #  'Top Words for Topic',
                                  'Additional Words for Topic',
+                                 'Probability of Topic',
                                  'Next Likely Topic',
-                                 'Probability of Next Topic',
                                 #  'Top Words for Next Topic',
-                                 'Additional Words for Next Topic'
+                                 'Additional Words for Next Topic',
+                                 'Probability of Next Topic'
                                  ])
 
     fig.update_layout(
@@ -250,6 +251,7 @@ def update_lda_visualization(data):
     fig.add_annotation(
         x=0,
         y=-0.1,
+        text='',
         xref="paper",
         yref="paper",
         showarrow=False,
