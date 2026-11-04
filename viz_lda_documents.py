@@ -15,8 +15,6 @@ from gensim.parsing.preprocessing import preprocess_string
 # from wordcloud import WordCloud
 # import matplotlib.pyplot as plt
 # from wordcloud import WordCloud, STOPWORDS
-from sklearn.decomposition import LatentDirichletAllocation as LDA
-from sklearn.feature_extraction.text import CountVectorizer
 import numpy as np
 from sklearn.manifold import TSNE
 import pandas as pd
@@ -266,4 +264,4 @@ def update_lda_visualization(data):
     ])
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run(debug=True)

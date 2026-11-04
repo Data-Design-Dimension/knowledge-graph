@@ -1,0 +1,8 @@
+dash
+dash-bootstrap-components
+python-docx
+gensim
+scikit-learn
+numpy
+pandas
+plotly
